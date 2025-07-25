@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="icon" type="image/jpeg" href="icon.jpg">
+  <title>Hemali_art_work</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #eac1f5, #b5e1f9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .form-container {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .logos{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    button {
+      background-color: #1e62d0;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #144ba0;
+    }
+    #msg {
+      text-align: center;
+      font-weight: 500;
+      margin-top: 10px;
+      color: green;
+      font-size: 15px;
+    }
+
+    /* Extra: Mobile tweaks */
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+      input, button {
+        font-size: 15px;
+        padding: 10px;
+      }
+    }
+  </style>
+
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1466624704542138');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1466624704542138&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <div class="form-container">
+<div class="logos">
+    <i class="fab fa-instagram fa-2x"></i>
+
+    <h2>Hemali_art_work</h2>
+    </div>
+    <form id="userForm">
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="mobile">Mobile Number *</label>
+      <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" />
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyLu6kji_syVJtqc5F1hXiETshZDSWuVDAyweo9NgO_I4EgNtmaNp7-oVwZEleiObyRjQ/exec';
+    const form = document.getElementById('userForm');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+          msg.innerHTML = '📩 We will send you the information on WhatsApp shortly.';
+          form.reset();
+        })
+        .catch(error => {
+          msg.innerHTML = '❌ Submission failed.';
+          console.error('Error!', error.message);
+        });
+    });
+  </script>
+
+</body>
+</html>
